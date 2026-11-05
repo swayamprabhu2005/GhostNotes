@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GhostNotes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <div class="logo-wrap">
+        <img src="../icons/icon-48.png" alt="GhostNotes" class="logo-img">
+        <div>
+          <h1>GhostNotes</h1>
+          <p class="subtitle">Silent AI Meeting Scribe</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-card" id="status-card">
+      <div class="status-row">
+        <span class="status-indicator" id="platform-dot"></span>
+        <span id="platform-text">Checking meeting status...</span>
+      </div>
+      <div class="status-sub" id="status-hint">Open Google Meet or Teams to start.</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-title">Grok AI Status</div>
+      <div class="info-row">
+        <span id="grok-status-badge" class="badge badge-warning">Checking...</span>
+        <button id="btn-open-options" class="btn-text">Configure Key</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="btn-quick-guide" class="btn btn-secondary">How to Use</button>
+      <button id="btn-open-settings" class="btn btn-primary">Open Settings</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

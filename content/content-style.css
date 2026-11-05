@@ -1,0 +1,233 @@
+/* content/content-style.css */
+/* Isolated styles for the floating AI Meeting Scribe widget */
+
+#ai-scribe-root {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  z-index: 9999999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #F8FAFC;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-scribe-panel {
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  min-width: 320px;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.ai-scribe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+.ai-scribe-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-scribe-logo-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.ai-scribe-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6366F1, #06B6D4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.ai-scribe-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: #F1F5F9;
+  letter-spacing: -0.2px;
+}
+
+.ai-scribe-actions-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-scribe-btn-icon {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.ai-scribe-btn-icon:hover {
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ai-scribe-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.ai-scribe-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ai-scribe-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #64748B;
+  transition: all 0.2s ease;
+}
+
+.ai-scribe-dot.recording {
+  background: #EF4444;
+  box-shadow: 0 0 10px #EF4444;
+  animation: pulse-red 1.5s infinite;
+}
+
+.ai-scribe-dot.processing {
+  background: #6366F1;
+  box-shadow: 0 0 10px #6366F1;
+  animation: pulse-blue 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+@keyframes pulse-blue {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.ai-scribe-meta {
+  font-size: 11px;
+  color: #94A3B8;
+  font-family: monospace;
+}
+
+.ai-scribe-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.ai-scribe-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-scribe-btn-start {
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+.ai-scribe-btn-start:hover {
+  background: linear-gradient(135deg, #4338CA, #4F46E5);
+  transform: translateY(-1px);
+}
+
+.ai-scribe-btn-stop {
+  background: linear-gradient(135deg, #DC2626, #EF4444);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+}
+
+.ai-scribe-btn-stop:hover {
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  transform: translateY(-1px);
+}
+
+.ai-scribe-live-preview {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  max-height: 90px;
+  overflow-y: auto;
+  font-size: 11px;
+  color: #CBD5E1;
+}
+
+.ai-scribe-preview-line {
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.ai-scribe-speaker-tag {
+  font-weight: 700;
+  color: #38BDF8;
+  margin-right: 4px;
+}
+
+.ai-scribe-toast {
+  position: absolute;
+  top: -46px;
+  left: 0;
+  right: 0;
+  background: #10B981;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+  animation: slide-toast 0.3s ease-out;
+}
+
+@keyframes slide-toast {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

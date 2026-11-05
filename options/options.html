@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings • GhostNotes</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <img src="../icons/icon-48.png" alt="GhostNotes Logo" class="logo-img">
+        <div>
+          <h1>GhostNotes</h1>
+          <p class="subtitle">Silent AI Meeting Scribe • Configuration & Grok AI Settings</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>xAI Grok API Configuration</h2>
+        <p class="card-desc">Grok contextually repairs misheard captions, formats the chronological script, and generates executive action items.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="grok-api-key">xAI Grok API Key <span class="required">*</span></label>
+        <div class="input-wrap">
+          <input type="password" id="grok-api-key" placeholder="xai-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+          <button type="button" id="btn-toggle-key" class="btn-input-action">Show</button>
+        </div>
+        <div class="help-text">Your API key is stored securely in Chrome's local extension storage and never leaves your browser except for direct calls to xAI.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="grok-model">Grok Model</label>
+        <select id="grok-model">
+          <option value="grok-2-latest">grok-2-latest (Recommended: High intelligence & fast)</option>
+          <option value="grok-beta">grok-beta</option>
+        </select>
+      </div>
+
+      <div class="form-actions-inline">
+        <button type="button" id="btn-test-connection" class="btn btn-secondary">Test Connection</button>
+        <span id="test-status" class="test-status"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Domain Vocabulary & Phonetic Error Correction</h2>
+        <p class="card-desc">Provide company acronyms, project names, or team member names to help Grok accurately recognize and replace misheard words.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="custom-vocab">Custom Vocabulary & Jargon (Comma or line separated)</label>
+        <textarea id="custom-vocab" rows="4" placeholder="e.g. Kubernetes, Next.js, Antigravity, PostgreSQL, Swayam, Alex, Q3 Roadmap"></textarea>
+        <div class="help-text">When Meet captions mishear words (e.g. "cube netties" or "seq"), Grok uses this list to contextually restore the exact term.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h2>Meeting Behavior</h2>
+      </div>
+
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="auto-turn-on-captions" checked>
+          <span>Automatically turn on Closed Captions (CC) when starting the scribe</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="footer-actions">
+      <button type="button" id="btn-save" class="btn btn-primary">Save Settings</button>
+      <div id="save-toast" class="toast" style="display: none;">✓ Settings saved successfully!</div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
